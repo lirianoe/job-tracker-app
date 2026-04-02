@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Job Match{% endblock %}
+
+{% block content %}
+
+<form method="POST" class="mb-6">
+    <input name="skills" placeholder="Python, SQL, Flask" class="p-2 border rounded w-full">
+    <button class="bg-indigo-600 text-white px-4 py-2 rounded mt-2">Match</button>
+</form>
+
+{% for job, percent in results %}
+<div class="glass-card mb-3 flex justify-between">
+    <span>{{ job }}</span>
+    <span class="font-bold">{{ percent }}%</span>
+</div>
+{% endfor %}
+
+{% endblock %}

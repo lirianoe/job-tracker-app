@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Companies{% endblock %}
+
+{% block content %}
+
+<form method="POST" action="/add_company" class="mb-4">
+    <input name="name" placeholder="Company name" class="p-2 border rounded">
+    <button class="bg-indigo-500 text-white px-4 py-2 rounded">Add</button>
+</form>
+
+<div class="space-y-3">
+{% for c in companies %}
+    <div class="glass-card flex justify-between items-center">
+        <span>{{ c.company_name }}</span>
+
+        <div class="flex gap-2">
+            <a href="/edit_company/{{c.company_id}}" class="text-blue-500">Edit</a>
+            <a href="/delete_company/{{c.company_id}}" class="text-red-500" onclick="return confirm('Delete this?')">Delete</a>
+        </div>
+    </div>
+{% endfor %}
+</div>
+
+{% endblock %}

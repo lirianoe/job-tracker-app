@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form method="POST" action="/add_contact" class="mb-4 flex gap-2">
+    <input name="first_name" placeholder="First name" class="p-2 border rounded">
+    <input name="last_name" placeholder="Last name" class="p-2 border rounded">
+    <button class="bg-indigo-500 text-white px-4 py-2 rounded">Add</button>
+</form>
+
+{% for c in contacts %}
+<div class="glass-card flex justify-between items-center mb-2">
+    <span>{{ c.first_name }} {{ c.last_name }}</span>
+
+    <div class="flex gap-2">
+        <a href="/edit_contact/{{c.contact_id}}" class="text-blue-500">Edit</a>
+        <a href="/delete_contact/{{c.contact_id}}" class="text-red-500" onclick="return confirm('Delete this?')">Delete</a>
+    </div>
+</div>
+{% endfor %}
+
+{% endblock %}

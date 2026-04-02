@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form method="POST">
+    <input name="name" value="{{ company.company_name }}" class="p-2 border rounded">
+    <button class="bg-indigo-500 text-white px-4 py-2 rounded">Update</button>
+</form>
+
+{% endblock %}

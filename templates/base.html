@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Job Tracker</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f8fafc;
+        }
+
+        .glass-card {
+            background: rgba(255,255,255,0.8);
+            backdrop-filter: blur(8px);
+            border-radius: 20px;
+            padding: 20px;
+        }
+
+        .nav-link {
+            display: block;
+            padding: 12px;
+            border-radius: 12px;
+        }
+
+        .nav-link:hover {
+            background: #eef2ff;
+        }
+    </style>
+</head>
+
+<body class="flex">
+
+<!-- SIDEBAR -->
+<div class="w-64 min-h-screen bg-white p-6 shadow-md">
+
+    <h1 class="text-2xl font-bold mb-6">Job Track</h1>
+
+    <a href="/" class="nav-link">Dashboard</a>
+    <a href="/companies" class="nav-link">Companies</a>
+    <a href="/jobs" class="nav-link">Jobs</a>
+    <a href="/applications" class="nav-link">Applications</a>
+    <a href="/contacts" class="nav-link">Contacts</a>
+    <a href="/job_match" class="nav-link">Job Match</a>
+
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="flex-1 p-8">
+
+    <h1 class="text-2xl font-bold mb-6">{% block title %}{% endblock %}</h1>
+
+    {% block content %}{% endblock %}
+
+</div>
+
+</body>
+</html>
