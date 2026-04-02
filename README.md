@@ -21,10 +21,14 @@ It is built using Flask (Python), MySQL, and HTML/CSS.
 2. Install Python dependencies:
    pip install -r requirements.txt
 
-3. Start the application:
+3. Before running the application, set your MySQL password as an environment variable:
+
+export DB_PASSWORD=your_password_here
+
+4. Start the application:
    python3 app.py
 
-4. Open in browser:
+5. Open in browser:
    http://127.0.0.1:5000
 
 ## Project Structure
